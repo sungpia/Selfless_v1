@@ -1,1 +1,1 @@
-<%= line_chart Donation.group_by_day(:created_at).amount %>
+<%= line_chart Donation.all.amount %>

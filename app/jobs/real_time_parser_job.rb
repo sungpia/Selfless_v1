@@ -3,7 +3,7 @@ class RealTimeParserJob < ActiveJob::Base
   queue_as :low_priority
 
   def perform(*args)
-
+	puts "***********************REAL_TIME_PARSER_CALLED***********************************"
 		jobs = Auth.all
 		jobs.each do |job|
 			user_insta_id = job.user.insta_id
@@ -14,7 +14,5 @@ class RealTimeParserJob < ActiveJob::Base
 			TagParserJob.perform_now(url, user_insta_id)
 		end
 	  # Do something later
-	sleep 10
-	RealTimeParserJob.perform_later
   end
 end

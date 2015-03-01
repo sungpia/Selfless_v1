@@ -47,5 +47,5 @@ gem 'apns'
 gem 'whenever'
 gem 'groupdate'
 gem 'chartkick'
-
-
+gem 'therubyracer'
+gem 'pq'

@@ -6,20 +6,21 @@ class TagParserJob < ActiveJob::Base
 
   def perform(*args)
     # Do something later
-	  url = args[0]
+	url = args[0]
 	user_insta_id = args[1]
-	puts url
-	puts user_insta_id  
+	puts "INDIVIDUAL PARSER : " + url
+	puts "FOR " + user_insta_id  
 	
 	result = Net::HTTP.get(URI.parse(url))
 	  j = JSON.parse(result)
-	puts j	
 	tag = "#selflessdfwdonate"
 	  j["data"].each do |data|
+		
 		  user_id= data["user"]["id"]
 		  insta_post_id = data["id"]
 		  default_charity_id = User.find_by(insta_id: data["user"]["id"]).default_charity_id
-		  if p=Post.where(user_id: user_id, insta_post_id: insta_post_id, charity_id: default_charity_id)[0] == NIL
+		puts "" 
+		 if p=Post.where(user_id: user_id, insta_post_id: insta_post_id, charity_id: default_charity_id)[0] == NIL
 				p = Post.new
 				p.user_id = user_id
 				p.insta_post_id= insta_post_id
