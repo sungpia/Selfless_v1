@@ -1,1 +1,9 @@
-<%= line_chart Donation.all.amount %>
+<div class="row">
+
+  <!-- Line Chart - Single Series -->
+  <div class="col-xs-6">
+    <h3>Donate By Day</h3>
+    <%= line_chart Donation.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>
+  </div>
+
+</div>i

@@ -26,7 +26,7 @@ class TagParserJob < ActiveJob::Base
 				p.insta_post_id= insta_post_id
 				p.charity_id= default_charity_id
 				p.save
-				PostMadeJob.perform_now(User.find_by(user_id).push_id)
+				PostMadeJob.perform_now(User.find_by(insta_id: user_id).push_id)
 		  end
 		  data["comments"]["data"].each do |comment|
 			  insta_comment_id = comment["id"]
@@ -45,9 +45,10 @@ class TagParserJob < ActiveJob::Base
 						d.insta_comment_id = insta_comment_id
 						d.save
 						begin
-							push_id = User.find_by(instra_id: insta_id).push_id
-							YoumadeJob.perform_now(push_id)
-						rescue 
+							push_id = User.find_by(insta_id: insta_id).push_id
+							YouMadeJob.perform_now(push_id)
+						rescue
+						 
 						end
 						SomeoneMadeJob.perform_now(User.find_by(insta_id: user_id).push_id)
 					end
