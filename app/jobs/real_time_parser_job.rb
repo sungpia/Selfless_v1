@@ -1,6 +1,6 @@
 
 class RealTimeParserJob < ActiveJob::Base
-  queue_as :default
+  queue_as :low_priority
 
   def perform(*args)
 
@@ -14,5 +14,7 @@ class RealTimeParserJob < ActiveJob::Base
 			TagParserJob.perform_now(url, user_insta_id)
 		end
 	  # Do something later
+	sleep 10
+	RealTimeParserJob.perform_later
   end
 end

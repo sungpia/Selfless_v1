@@ -24,5 +24,5 @@ set :path, Rails.root
 set :output, Rails.root.join('log', 'cron.log')
 
 every 1.minute do
- 	RealTimeParserJob.perform_later
+ 	runner "RealTimeParserJob.perform_later"
 end
