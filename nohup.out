@@ -15812,3 +15812,756 @@ NoMethodError (undefined method `default_charity_id' for nil:NilClass):
   Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
   Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
   Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.6ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:16:24 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06]   [1m[36mAuth Load (0.3ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [909cb84c-42e0-45c6-9d43-e11f2f860206] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=593875454.8d257fe.e8b6e29056a343cb9755f5cef718e6d3&count=10", "593875454"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=593875454.8d257fe.e8b6e29056a343cb9755f5cef718e6d3&count=10
+FOR 593875454
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [909cb84c-42e0-45c6-9d43-e11f2f860206]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [909cb84c-42e0-45c6-9d43-e11f2f860206]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+931166021522598558
+593875454
+false
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [909cb84c-42e0-45c6-9d43-e11f2f860206]   [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [909cb84c-42e0-45c6-9d43-e11f2f860206]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "593875454"]]
+
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [909cb84c-42e0-45c6-9d43-e11f2f860206]   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3[0m  [["user_id", 593875454], ["insta_post_id", "931164974888722010_593875454"], ["charity_id", 1]]
+931165343031173113
+1229179393
+false
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [909cb84c-42e0-45c6-9d43-e11f2f860206]   [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3  [["host_insta_id", "593875454"], ["insta_comment_id", "931165343031173113"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [909cb84c-42e0-45c6-9d43-e11f2f860206] Performed TagParserJob from Inline(default) in 263.77ms
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 12]]
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [f34116ac-46a5-4f6a-aa94-c31f59cdff4a] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [f34116ac-46a5-4f6a-aa94-c31f59cdff4a]   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] [TagParserJob] [f34116ac-46a5-4f6a-aa94-c31f59cdff4a] Performed TagParserJob from Inline(default) in 289.84ms
+[ActiveJob] [RealTimeParserJob] [03b91bda-b408-47e9-8155-62de18b5af06] Performed RealTimeParserJob from Inline(low_priority) in 556.36ms
+Completed 500 Internal Server Error in 557ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.8ms)
+
+
+Started GET "/" for 208.54.83.186 at 2015-03-01 18:16:27 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GraphController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC' AS day FROM "donations" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC'[0m
+  Rendered graph/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 208.54.83.186 at 2015-03-01 18:16:28 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 208.54.83.186 at 2015-03-01 18:16:28 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 208.54.83.186 at 2015-03-01 18:16:28 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application-bc105cf26f847567b5eae624a793b626.js?body=1" for 208.54.83.186 at 2015-03-01 18:16:28 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 208.54.83.186 at 2015-03-01 18:16:28 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/chartkick-d1498a7e4d50420358741f556d7c0ebd.js?body=1" for 208.54.83.186 at 2015-03-01 18:16:28 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/v1/user" for 208.54.83.186 at 2015-03-01 18:16:55 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::UserController#create as */*
+  Parameters: {"auth_token"=>"1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c", "insta_id"=>"1229179393", "insta_name"=>"sungpia", "os_type"=>"iOS", "push_id"=>"ec6e57dc790537ebc8e9e7cc809299ab1824da102b6dfe2c1dde235542f25b0b"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "1229179393"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("insta_id", "insta_name", "os_type", "push_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["insta_id", "1229179393"], ["insta_name", "sungpia"], ["os_type", "iOS"], ["push_id", "ec6e57dc790537ebc8e9e7cc809299ab1824da102b6dfe2c1dde235542f25b0b"], ["created_at", "2015-03-01 18:16:55.284687"], ["updated_at", "2015-03-01 18:16:55.284687"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auths" ("auth_token", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["auth_token", "1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c"], ["user_id", 21], ["created_at", "2015-03-01 18:16:55.285907"], ["updated_at", "2015-03-01 18:16:55.285907"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:16:55 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8]   [1m[36mAuth Load (0.2ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [f99166e1-36b9-4ae2-af74-296b372acc8d] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=593875454.8d257fe.e8b6e29056a343cb9755f5cef718e6d3&count=10", "593875454"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=593875454.8d257fe.e8b6e29056a343cb9755f5cef718e6d3&count=10
+FOR 593875454
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [f99166e1-36b9-4ae2-af74-296b372acc8d]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [f99166e1-36b9-4ae2-af74-296b372acc8d]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+931166021522598558
+593875454
+false
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [f99166e1-36b9-4ae2-af74-296b372acc8d]   [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [f99166e1-36b9-4ae2-af74-296b372acc8d]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "593875454"]]
+
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [f99166e1-36b9-4ae2-af74-296b372acc8d]   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3[0m  [["user_id", 593875454], ["insta_post_id", "931164974888722010_593875454"], ["charity_id", 1]]
+931165343031173113
+1229179393
+false
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [f99166e1-36b9-4ae2-af74-296b372acc8d]   [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3  [["host_insta_id", "593875454"], ["insta_comment_id", "931165343031173113"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [f99166e1-36b9-4ae2-af74-296b372acc8d] Performed TagParserJob from Inline(default) in 267.75ms
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 12]]
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [defe0ad6-0075-4dd2-acf4-3a7b6bc82c2f] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [defe0ad6-0075-4dd2-acf4-3a7b6bc82c2f]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] [TagParserJob] [defe0ad6-0075-4dd2-acf4-3a7b6bc82c2f] Performed TagParserJob from Inline(default) in 264.79ms
+[ActiveJob] [RealTimeParserJob] [071a39d3-6fd2-4ba7-ad49-f8181a184cf8] Performed RealTimeParserJob from Inline(low_priority) in 535.41ms
+Completed 500 Internal Server Error in 536ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.2ms)
+
+
+Started GET "/" for 208.54.83.186 at 2015-03-01 18:17:00 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GraphController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC' AS day FROM "donations" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC'[0m
+  Rendered graph/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:17:26 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338]   [1m[35mAuth Load (0.4ms)[0m  SELECT "auths".* FROM "auths"
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 11]]
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [8f9e0b29-1563-4bf9-9d93-56943f9337bb] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=593875454.8d257fe.e8b6e29056a343cb9755f5cef718e6d3&count=10", "593875454"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=593875454.8d257fe.e8b6e29056a343cb9755f5cef718e6d3&count=10
+FOR 593875454
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [8f9e0b29-1563-4bf9-9d93-56943f9337bb]   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [8f9e0b29-1563-4bf9-9d93-56943f9337bb]   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3[0m  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+931166021522598558
+593875454
+false
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [8f9e0b29-1563-4bf9-9d93-56943f9337bb]   [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [8f9e0b29-1563-4bf9-9d93-56943f9337bb]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "593875454"]]
+
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [8f9e0b29-1563-4bf9-9d93-56943f9337bb]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 593875454], ["insta_post_id", "931164974888722010_593875454"], ["charity_id", 1]]
+931165343031173113
+1229179393
+false
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [8f9e0b29-1563-4bf9-9d93-56943f9337bb]   [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "593875454"], ["insta_comment_id", "931165343031173113"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [8f9e0b29-1563-4bf9-9d93-56943f9337bb] Performed TagParserJob from Inline(default) in 548.25ms
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 12]]
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [4278c833-a4a1-4156-827d-2c94c5807225] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [4278c833-a4a1-4156-827d-2c94c5807225]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] [TagParserJob] [4278c833-a4a1-4156-827d-2c94c5807225] Performed TagParserJob from Inline(default) in 530.6ms
+[ActiveJob] [RealTimeParserJob] [62edf79e-0d3f-48d6-8833-780aaacb4338] Performed RealTimeParserJob from Inline(low_priority) in 1081.76ms
+Completed 500 Internal Server Error in 1082ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.3ms)
+
+
+Started GET "/" for 208.54.83.186 at 2015-03-01 18:17:31 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GraphController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC' AS day FROM "donations" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC'
+  Rendered graph/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:17:58 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc]   [1m[36mAuth Load (0.3ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [3d1bcbed-98fc-42b9-859e-355d564f2662] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=593875454.8d257fe.e8b6e29056a343cb9755f5cef718e6d3&count=10", "593875454"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=593875454.8d257fe.e8b6e29056a343cb9755f5cef718e6d3&count=10
+FOR 593875454
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [3d1bcbed-98fc-42b9-859e-355d564f2662]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [3d1bcbed-98fc-42b9-859e-355d564f2662]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+931166021522598558
+593875454
+false
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [3d1bcbed-98fc-42b9-859e-355d564f2662]   [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [3d1bcbed-98fc-42b9-859e-355d564f2662]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "593875454"]]
+
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [3d1bcbed-98fc-42b9-859e-355d564f2662]   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3[0m  [["user_id", 593875454], ["insta_post_id", "931164974888722010_593875454"], ["charity_id", 1]]
+931165343031173113
+1229179393
+false
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [3d1bcbed-98fc-42b9-859e-355d564f2662]   [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3  [["host_insta_id", "593875454"], ["insta_comment_id", "931165343031173113"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [3d1bcbed-98fc-42b9-859e-355d564f2662] Performed TagParserJob from Inline(default) in 244.7ms
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 12]]
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [d76176b7-62b2-4812-8069-27e0f59bddee] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [d76176b7-62b2-4812-8069-27e0f59bddee]   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] [TagParserJob] [d76176b7-62b2-4812-8069-27e0f59bddee] Performed TagParserJob from Inline(default) in 222.56ms
+[ActiveJob] [RealTimeParserJob] [3e463fb7-df1f-487b-b3a1-2db998c587dc] Performed RealTimeParserJob from Inline(low_priority) in 472.96ms
+Completed 500 Internal Server Error in 473ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.0ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:18:30 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [6130fd32-f608-4504-9155-f6fd47304658] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [6130fd32-f608-4504-9155-f6fd47304658]   [1m[36mAuth Load (0.2ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [6130fd32-f608-4504-9155-f6fd47304658]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+[ActiveJob] [RealTimeParserJob] [6130fd32-f608-4504-9155-f6fd47304658] Performed RealTimeParserJob from Inline(low_priority) in 1.8ms
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `insta_id' for nil:NilClass):
+  app/jobs/real_time_parser_job.rb:9:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.7ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:19:00 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [1e74a22e-0b70-4c82-ad32-08578f1581c2] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [1e74a22e-0b70-4c82-ad32-08578f1581c2]   [1m[36mAuth Load (0.2ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [1e74a22e-0b70-4c82-ad32-08578f1581c2] Performed RealTimeParserJob from Inline(low_priority) in 0.59ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:19:23 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [b46a116a-8405-4028-bcbe-ba9286914d87] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [b46a116a-8405-4028-bcbe-ba9286914d87]   [1m[35mAuth Load (0.2ms)[0m  SELECT "auths".* FROM "auths"
+[ActiveJob] [RealTimeParserJob] [b46a116a-8405-4028-bcbe-ba9286914d87] Performed RealTimeParserJob from Inline(low_priority) in 0.53ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:19:30 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [f1c78200-0631-4ac0-ba59-29283c03b797] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [f1c78200-0631-4ac0-ba59-29283c03b797]   [1m[36mAuth Load (0.2ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [f1c78200-0631-4ac0-ba59-29283c03b797] Performed RealTimeParserJob from Inline(low_priority) in 0.59ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/user" for 208.54.83.186 at 2015-03-01 18:19:43 +0000
+Cannot render console from 208.54.83.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::UserController#create as */*
+  Parameters: {"auth_token"=>"1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c", "insta_id"=>"1229179393", "insta_name"=>"sungpia", "os_type"=>"iOS", "push_id"=>"ec6e57dc790537ebc8e9e7cc809299ab1824da102b6dfe2c1dde235542f25b0b"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "1229179393"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("insta_id", "insta_name", "os_type", "push_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["insta_id", "1229179393"], ["insta_name", "sungpia"], ["os_type", "iOS"], ["push_id", "ec6e57dc790537ebc8e9e7cc809299ab1824da102b6dfe2c1dde235542f25b0b"], ["created_at", "2015-03-01 18:19:43.921850"], ["updated_at", "2015-03-01 18:19:43.921850"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auths" ("auth_token", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["auth_token", "1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c"], ["user_id", 22], ["created_at", "2015-03-01 18:19:43.923026"], ["updated_at", "2015-03-01 18:19:43.923026"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Completed 201 Created in 5ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:19:53 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [63fa956a-0212-404b-8b6f-40da2e86926e] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [63fa956a-0212-404b-8b6f-40da2e86926e]   [1m[36mAuth Load (0.2ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [63fa956a-0212-404b-8b6f-40da2e86926e]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 22]]
+[ActiveJob] [RealTimeParserJob] [63fa956a-0212-404b-8b6f-40da2e86926e] [TagParserJob] [c405fb7c-592d-472b-9fc3-c710cae85ba2] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [63fa956a-0212-404b-8b6f-40da2e86926e] [TagParserJob] [c405fb7c-592d-472b-9fc3-c710cae85ba2]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [63fa956a-0212-404b-8b6f-40da2e86926e] [TagParserJob] [c405fb7c-592d-472b-9fc3-c710cae85ba2] Performed TagParserJob from Inline(default) in 235.51ms
+[ActiveJob] [RealTimeParserJob] [63fa956a-0212-404b-8b6f-40da2e86926e] Performed RealTimeParserJob from Inline(low_priority) in 237.07ms
+Completed 500 Internal Server Error in 237ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.8ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:20:25 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [20d9b2f7-4d95-4e40-8c66-a8d5314d66bd] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [20d9b2f7-4d95-4e40-8c66-a8d5314d66bd]   [1m[35mAuth Load (0.2ms)[0m  SELECT "auths".* FROM "auths"
+[ActiveJob] [RealTimeParserJob] [20d9b2f7-4d95-4e40-8c66-a8d5314d66bd]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 22]]
+[ActiveJob] [RealTimeParserJob] [20d9b2f7-4d95-4e40-8c66-a8d5314d66bd] [TagParserJob] [a6339730-5a63-416d-9849-21c3f7be3886] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [20d9b2f7-4d95-4e40-8c66-a8d5314d66bd] [TagParserJob] [a6339730-5a63-416d-9849-21c3f7be3886]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [20d9b2f7-4d95-4e40-8c66-a8d5314d66bd] [TagParserJob] [a6339730-5a63-416d-9849-21c3f7be3886] Performed TagParserJob from Inline(default) in 288.1ms
+[ActiveJob] [RealTimeParserJob] [20d9b2f7-4d95-4e40-8c66-a8d5314d66bd] Performed RealTimeParserJob from Inline(low_priority) in 289.78ms
+Completed 500 Internal Server Error in 290ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.8ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:20:56 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [55e48d77-71a9-4a0d-a870-66c7b12c4ca5] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [55e48d77-71a9-4a0d-a870-66c7b12c4ca5]   [1m[36mAuth Load (0.3ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [55e48d77-71a9-4a0d-a870-66c7b12c4ca5]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 22]]
+[ActiveJob] [RealTimeParserJob] [55e48d77-71a9-4a0d-a870-66c7b12c4ca5] [TagParserJob] [fb02a162-1539-4316-b0ed-3c5e8d781a20] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [55e48d77-71a9-4a0d-a870-66c7b12c4ca5] [TagParserJob] [fb02a162-1539-4316-b0ed-3c5e8d781a20]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [55e48d77-71a9-4a0d-a870-66c7b12c4ca5] [TagParserJob] [fb02a162-1539-4316-b0ed-3c5e8d781a20] Performed TagParserJob from Inline(default) in 363.51ms
+[ActiveJob] [RealTimeParserJob] [55e48d77-71a9-4a0d-a870-66c7b12c4ca5] Performed RealTimeParserJob from Inline(low_priority) in 365.25ms
+Completed 500 Internal Server Error in 366ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.3ms)
+
+
+Started POST "/v1/user" for 107.107.191.7 at 2015-03-01 18:21:13 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::UserController#create as */*
+  Parameters: {"auth_token"=>"305228927.8d257fe.e70b51e0f5a84f0c8b3ec4b31fa8d5dc", "insta_id"=>"305228927", "insta_name"=>"sadiesublousky", "os_type"=>"iOS", "push_id"=>"af8983e357ca623103a7767ccd15e2f84380bc2c95f3c6b7506452ecdb453118"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("insta_id", "insta_name", "os_type", "push_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["insta_id", "305228927"], ["insta_name", "sadiesublousky"], ["os_type", "iOS"], ["push_id", "af8983e357ca623103a7767ccd15e2f84380bc2c95f3c6b7506452ecdb453118"], ["created_at", "2015-03-01 18:21:13.411801"], ["updated_at", "2015-03-01 18:21:13.411801"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "auths" ("auth_token", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["auth_token", "305228927.8d257fe.e70b51e0f5a84f0c8b3ec4b31fa8d5dc"], ["user_id", 23], ["created_at", "2015-03-01 18:21:13.412976"], ["updated_at", "2015-03-01 18:21:13.412976"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:21:27 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef]   [1m[36mAuth Load (0.2ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 22]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "305228927"]]
+
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 305228927], ["insta_post_id", "931247761854915493_305228927"], ["charity_id", 1]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("user_id", "insta_post_id", "charity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 305228927], ["insta_post_id", "931247761854915493_305228927"], ["charity_id", 1], ["created_at", "2015-03-01 18:21:27.435676"], ["updated_at", "2015-03-01 18:21:27.435676"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] [PostMadeJob] [ba1fe2a3-1d7e-44d7-b0cf-3f2f2f643635] Performing PostMadeJob from Inline(default) with arguments: "af8983e357ca623103a7767ccd15e2f84380bc2c95f3c6b7506452ecdb453118"
+*
+*
+*** PUSH to af8983e357ca623103a7767ccd15e2f84380bc2c95f3c6b7506452ecdb453118
+*** SENT
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] [PostMadeJob] [ba1fe2a3-1d7e-44d7-b0cf-3f2f2f643635] Performed PostMadeJob from Inline(default) in 169.54ms
+931248756701880908
+1229179393
+#<Post:0x00000005f35660>
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36mDonation Load (0.2ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "305228927"], ["insta_comment_id", "931248756701880908"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."insta_id" = $1  [["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3 LIMIT 1[0m  [["user_id", 305228927], ["insta_post_id", "931247761854915493_305228927"], ["charity_id", 1]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35m (0.1ms)[0m  BEGIN
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "donations" ("post_id", "amount", "host_insta_id", "insta_id", "insta_comment_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["post_id", 17], ["amount", 1], ["host_insta_id", "305228927"], ["insta_id", "1229179393"], ["insta_comment_id", "931248756701880908"], ["created_at", "2015-03-01 18:21:27.612447"], ["updated_at", "2015-03-01 18:21:27.612447"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35m (0.9ms)[0m  COMMIT
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] [YouMadeJob] [721d2cc8-0e86-4cc7-b47d-1746383e2d3f] Performing YouMadeJob from Inline(default) with arguments: "ec6e57dc790537ebc8e9e7cc809299ab1824da102b6dfe2c1dde235542f25b0b"
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] [YouMadeJob] [721d2cc8-0e86-4cc7-b47d-1746383e2d3f] Performed YouMadeJob from Inline(default) in 131.79ms
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] [SomeoneMadeJob] [36c3c174-7183-4b3f-8119-9f2066e9dc88] Performing SomeoneMadeJob from Inline(default) with arguments: "af8983e357ca623103a7767ccd15e2f84380bc2c95f3c6b7506452ecdb453118"
+***************************************************
+******af8983e357ca623103a7767ccd15e2f84380bc2c95f3c6b7506452ecdb453118 DONATED!! PUSHED!!
+****************************************************
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] [SomeoneMadeJob] [36c3c174-7183-4b3f-8119-9f2066e9dc88] Performed SomeoneMadeJob from Inline(default) in 246.22ms
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("user_id", "insta_post_id", "charity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1], ["created_at", "2015-03-01 18:21:27.997969"], ["updated_at", "2015-03-01 18:21:27.997969"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] [PostMadeJob] [c2a7b173-6147-4660-aa8e-5aee1cf17e88] Performing PostMadeJob from Inline(default) with arguments: "ec6e57dc790537ebc8e9e7cc809299ab1824da102b6dfe2c1dde235542f25b0b"
+*
+*
+*** PUSH to ec6e57dc790537ebc8e9e7cc809299ab1824da102b6dfe2c1dde235542f25b0b
+*** SENT
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] [PostMadeJob] [c2a7b173-6147-4660-aa8e-5aee1cf17e88] Performed PostMadeJob from Inline(default) in 134.06ms
+931166021522598558
+593875454
+#<Post:0x00000005e0f6f0>
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36mDonation Load (0.2ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."insta_id" = $1  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] [TagParserJob] [2ba30a37-7ebc-41de-85e9-9e181e5b4904] Performed TagParserJob from Inline(default) in 965.23ms
+[ActiveJob] [RealTimeParserJob] [30fa2c2b-9774-4bd6-8187-77a032b5afef] Performed RealTimeParserJob from Inline(low_priority) in 966.91ms
+Completed 500 Internal Server Error in 967ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.1ms)
+
+
+Started GET "/" for 107.107.191.7 at 2015-03-01 18:21:28 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GraphController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC' AS day FROM "donations" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC'
+  Rendered graph/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/chartkick-d1498a7e4d50420358741f556d7c0ebd.js?body=1" for 107.107.191.7 at 2015-03-01 18:21:28 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 107.107.191.7 at 2015-03-01 18:21:28 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 107.107.191.7 at 2015-03-01 18:21:28 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application-bc105cf26f847567b5eae624a793b626.js?body=1" for 107.107.191.7 at 2015-03-01 18:21:28 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 107.107.191.7 at 2015-03-01 18:21:28 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 107.107.191.7 at 2015-03-01 18:21:28 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:21:58 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427]   [1m[36mAuth Load (0.2ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 22]]
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "305228927"]]
+
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 305228927], ["insta_post_id", "931247761854915493_305228927"], ["charity_id", 1]]
+931248756701880908
+1229179393
+false
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3]   [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "305228927"], ["insta_comment_id", "931248756701880908"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3]   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3[0m  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+931166021522598558
+593875454
+false
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3]   [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."insta_id" = $1[0m  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] [TagParserJob] [71d6bf66-9fe9-4fb6-b52d-c32b7ed987e3] Performed TagParserJob from Inline(default) in 312.43ms
+[ActiveJob] [RealTimeParserJob] [5e494bf7-7be7-48cc-921d-bbb49b644427] Performed RealTimeParserJob from Inline(low_priority) in 314.05ms
+Completed 500 Internal Server Error in 314ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.6ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:22:29 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898]   [1m[36mAuth Load (0.2ms)[0m  [1mSELECT "auths".* FROM "auths"[0m
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 22]]
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "305228927"]]
+
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 305228927], ["insta_post_id", "931247761854915493_305228927"], ["charity_id", 1]]
+931248756701880908
+1229179393
+false
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653]   [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "305228927"], ["insta_comment_id", "931248756701880908"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653]   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3[0m  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+931166021522598558
+593875454
+false
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653]   [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."insta_id" = $1[0m  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653]   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] [TagParserJob] [ea138a83-fcb3-474b-81f1-f934d8370653] Performed TagParserJob from Inline(default) in 310.35ms
+[ActiveJob] [RealTimeParserJob] [3373d458-60d4-42ba-9582-063d4efcb898] Performed RealTimeParserJob from Inline(low_priority) in 312.0ms
+Completed 500 Internal Server Error in 312ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.6ms)
+
+
+Started GET "/" for 107.107.191.7 at 2015-03-01 18:22:48 +0000
+Cannot render console from 107.107.191.7! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GraphController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC' AS day FROM "donations" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 hour') AT TIME ZONE 'Etc/UTC'[0m
+  Rendered graph/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:23:00 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e]   [1m[35mAuth Load (0.2ms)[0m  SELECT "auths".* FROM "auths"
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e]   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 22]]
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36]   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36]   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3[0m  [["user_id", 305228927], ["insta_post_id", "931247761854915493_305228927"], ["charity_id", 1]]
+931248756701880908
+1229179393
+false
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36]   [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3  [["host_insta_id", "305228927"], ["insta_comment_id", "931248756701880908"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+931166021522598558
+593875454
+false
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36]   [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36]   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."insta_id" = $1  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] [TagParserJob] [e5565d75-d3e1-4d3b-8390-b86049cd1d36] Performed TagParserJob from Inline(default) in 271.22ms
+[ActiveJob] [RealTimeParserJob] [04ba3f8b-1bf7-4371-9a13-5ffd69d72c4e] Performed RealTimeParserJob from Inline(low_priority) in 273.13ms
+Completed 500 Internal Server Error in 274ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.1ms)
+
+
+Started GET "/v1/run" for 216.59.196.11 at 2015-03-01 18:23:31 +0000
+Cannot render console from 216.59.196.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by V1::PostController#runParser as */*
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] Performing RealTimeParserJob from Inline(low_priority)
+***********************REAL_TIME_PARSER_CALLED***********************************
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b]   [1m[35mAuth Load (0.2ms)[0m  SELECT "auths".* FROM "auths"
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 22]]
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16] Performing TagParserJob from Inline(default) with arguments: "https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10", "1229179393"
+INDIVIDUAL PARSER : https://api.instagram.com/v1/tags/selflessdfw/media/recent?access_token=1229179393.8d257fe.1d74a93f6e3d48bd92d28567ee9d887c&count=10
+FOR 1229179393
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16]   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1  [["insta_id", "305228927"]]
+
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16]   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3[0m  [["user_id", 305228927], ["insta_post_id", "931247761854915493_305228927"], ["charity_id", 1]]
+931248756701880908
+1229179393
+false
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16]   [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3  [["host_insta_id", "305228927"], ["insta_comment_id", "931248756701880908"], ["insta_id", "1229179393"]]
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "1229179393"]]
+
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16]   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."insta_post_id" = $2 AND "posts"."charity_id" = $3  [["user_id", 1229179393], ["insta_post_id", "931165748783786459_1229179393"], ["charity_id", 1]]
+931166021522598558
+593875454
+false
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16]   [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."host_insta_id" = $1 AND "donations"."insta_comment_id" = $2 AND "donations"."insta_id" = $3[0m  [["host_insta_id", "1229179393"], ["insta_comment_id", "931166021522598558"], ["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16]   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."insta_id" = $1  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16]   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."insta_id" = $1 LIMIT 1[0m  [["insta_id", "593875454"]]
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] [TagParserJob] [f48dbd08-d55b-4eeb-b280-8ce61f9e4e16] Performed TagParserJob from Inline(default) in 260.62ms
+[ActiveJob] [RealTimeParserJob] [bd799625-5c53-4806-bd6c-f5861f5c091b] Performed RealTimeParserJob from Inline(low_priority) in 262.29ms
+Completed 500 Internal Server Error in 263ms
+
+NoMethodError (undefined method `default_charity_id' for nil:NilClass):
+  app/jobs/tag_parser_job.rb:21:in `block in perform'
+  app/jobs/tag_parser_job.rb:17:in `each'
+  app/jobs/tag_parser_job.rb:17:in `perform'
+  app/jobs/real_time_parser_job.rb:14:in `block in perform'
+  app/jobs/real_time_parser_job.rb:8:in `perform'
+  app/controllers/v1/post_controller.rb:4:in `runParser'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+[2015-03-01 18:23:35] FATAL SignalException: SIGTERM
+	/home/ubuntu/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:174:in `select'
+	/home/ubuntu/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:174:in `block in start'
+	/home/ubuntu/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:32:in `start'
+	/home/ubuntu/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:162:in `start'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/rack-1.6.0/lib/rack/handler/webrick.rb:35:in `run'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/rack-1.6.0/lib/rack/server.rb:286:in `start'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/commands/server.rb:80:in `start'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/commands/commands_tasks.rb:75:in `tap'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/commands/commands_tasks.rb:75:in `server'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/commands.rb:17:in `<top (required)>'
+	/home/ubuntu/Selfless/bin/rails:8:in `require'
+	/home/ubuntu/Selfless/bin/rails:8:in `<top (required)>'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/spring-1.3.3/lib/spring/client/rails.rb:27:in `load'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/spring-1.3.3/lib/spring/client/rails.rb:27:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/spring-1.3.3/lib/spring/client/command.rb:7:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/spring-1.3.3/lib/spring/client.rb:26:in `run'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/spring-1.3.3/bin/spring:48:in `<top (required)>'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/spring-1.3.3/lib/spring/binstub.rb:11:in `load'
+	/home/ubuntu/.rvm/gems/ruby-2.2.0/gems/spring-1.3.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	/home/ubuntu/Selfless/bin/spring:13:in `require'
+	/home/ubuntu/Selfless/bin/spring:13:in `<top (required)>'
+	bin/rails:3:in `load'
+	bin/rails:3:in `<main>'
+[2015-03-01 18:23:35] INFO  going to shutdown ...
+[2015-03-01 18:23:35] INFO  WEBrick::HTTPServer#start done.
+Exiting

@@ -15,11 +15,11 @@ class TagParserJob < ActiveJob::Base
 	  j = JSON.parse(result)
 	tag = "#selflessdfwdonate"
 	  j["data"].each do |data|
-		
+		begin
+			User.find_by(insta_id: data["user"]["id"]).default_charity_id	
 		  user_id= data["user"]["id"]
 		  insta_post_id = data["id"]
 		  default_charity_id = User.find_by(insta_id: data["user"]["id"]).default_charity_id
-		puts "" 
 		 if p=Post.where(user_id: user_id, insta_post_id: insta_post_id, charity_id: default_charity_id)[0] == NIL
 				p = Post.new
 				p.user_id = user_id
@@ -53,8 +53,9 @@ class TagParserJob < ActiveJob::Base
 						SomeoneMadeJob.perform_now(User.find_by(insta_id: user_id).push_id)
 					end
 			  end
-
-		  end
+		rescue
+		end
+		end
 	  end
   end
 end
