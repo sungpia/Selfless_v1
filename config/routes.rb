@@ -1,7 +1,6 @@
 
 Rails.application.routes.draw do
-  root :to => "home#index"
-
+  root :to => "graph#index"
 
 
 	namespace :v1 do

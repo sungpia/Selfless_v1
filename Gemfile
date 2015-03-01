@@ -45,5 +45,7 @@ end
 gem 'json'
 gem 'apns'
 gem 'whenever'
+gem 'groupdate'
+gem 'chartkick'
 
 

@@ -3,14 +3,17 @@ module V1
 #		before_action :show, :update, :destroy
 
 		def create
-			user = User.new
-			user.insta_id = params[:insta_id]
-			user.insta_name = params[:insta_name]
-			user.os_type = params[:os_type]
-			user.push_id = params[:push_id]
-			user.auths << Auth.new(auth_token: params[:auth_token])
-			user.save
-
+			begin
+				User.find_by(insta_id: params[:insta_id])
+			rescue
+				user = User.new
+				user.insta_id = params[:insta_id]
+				user.insta_name = params[:insta_name]
+				user.os_type = params[:os_type]
+				user.push_id = params[:push_id]
+				user.auths << Auth.new(auth_token: params[:auth_token])
+				user.save
+			end
 			render json: user, status: 201
 
 		end
