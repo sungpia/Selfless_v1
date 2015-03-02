@@ -53,8 +53,8 @@ class TagParserJob < ActiveJob::Base
 						SomeoneMadeJob.perform_now(User.find_by(insta_id: user_id).push_id)
 					end
 			  end
-		rescue
 		end
+		rescue
 		end
 	  end
   end
